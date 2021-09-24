@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import ansible_runner
 import argparse
 import sys
 import textwrap
@@ -9,16 +8,7 @@ from utils import dotdict, load_config
 from exible import Exible
 
 
-# r = ansible_runner.run(
-#     private_data_dir    = ".",
-#     playbook            = "playbooks/experiment/greetings.yml",
-#     roles_path          = "roles",
-#     json_mode           = False
-# )
-
-# print(r.stats)
-
-VERSION     = "1.0.0-alpha"
+VERSION     = "0.0.1-alpha"
 
 DEFAULT_CLI_ARGS = {
     "generic_args": (
@@ -82,7 +72,7 @@ def run(config):
             extra_vars  = extra_vars,
             extra_flags = extra_flags
         )
-        print(obj)
+        obj.run()
 
 def main(sys_args=None):
 

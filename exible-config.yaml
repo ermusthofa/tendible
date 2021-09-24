@@ -1,11 +1,11 @@
 target_hash: a1795ad1edb338f9018df255c8ea0f263f19051a
 playbooks:
-- name: experiment/greetings
+- name: experiment/greetings.yml
   extra_vars:
     custom_param: johndoe
-- name: experiment/goodbye
+- name: experiment/goodbye.yml
   extra_vars:
     custom_param: whiskey
     experiment: "true"
-- name: experiment/goodbye
-  extra_flags: "-v"
+- name: experiment/goodbye.yml
+  extra_flags: "-vvv"
