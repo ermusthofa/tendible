@@ -1,0 +1,11 @@
+target_hash: a1795ad1edb338f9018df255c8ea0f263f19051a
+playbooks:
+- name: experiment/greetings
+  extra_vars:
+    custom_param: johndoe
+- name: experiment/goodbye
+  extra_vars:
+    custom_param: whiskey
+    experiment: "true"
+- name: experiment/goodbye
+  extra_flags: "-v"
