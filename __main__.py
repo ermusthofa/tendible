@@ -5,7 +5,7 @@ import sys
 import textwrap
 
 from utils import dotdict, load_config
-from exible import Exible
+from tendible import Tendible
 
 
 VERSION     = "0.0.1-alpha"
@@ -15,8 +15,8 @@ DEFAULT_CLI_ARGS = {
         (
             ('--config',),
             dict(
-                default="exible-config.yaml",
-                help='path to exible-config.yaml'
+                default="tendible-config.yaml",
+                help='path to tendible-config.yaml'
             ),
         ),
         (
@@ -30,7 +30,7 @@ DEFAULT_CLI_ARGS = {
             ("--debug",),
             dict(
                 action="store_true",
-                help="enable exible debug output logging (default=False)"
+                help="enable tendible debug output logging (default=False)"
             ),
         ),
         (
@@ -44,11 +44,11 @@ DEFAULT_CLI_ARGS = {
 
 def print_common_usage():
     print(textwrap.dedent("""
-        These are common Exible commands:
-            execute a playbook contained in exible-config.yaml:
-                exible run
+        These are common tendible commands:
+            execute a playbook contained in tendible-config.yaml:
+                tendible run
 
-        `exible --help` list of optional command line arguments
+        `tendible --help` list of optional command line arguments
     """))
 
 def add_args_to_parser(parser, args):
@@ -66,7 +66,7 @@ def run(config):
         if 'extra_flags' in playbook:
             extra_flags = playbook.extra_flags
 
-        obj = Exible(
+        obj = Tendible(
             inventory   = ".",
             playbook    = playbook.name,
             extra_vars  = extra_vars,
@@ -77,8 +77,8 @@ def run(config):
 def main(sys_args=None):
 
     parser = argparse.ArgumentParser(
-        prog        = "exible",
-        description = "Use 'exible' (with no arguments) to see basic usage"
+        prog        = "tendible",
+        description = "Use 'tendible' (with no arguments) to see basic usage"
     )
 
     subparser = parser.add_subparsers(
@@ -90,7 +90,7 @@ def main(sys_args=None):
 
     run_subparser = subparser.add_parser(
         'run',
-        help="Run exible in the foreground"
+        help="Run tendible in the foreground"
     )
     # add_args_to_parser(run_subparser, DEFAULT_CLI_ARGS['generic_args'])
 

@@ -2,7 +2,7 @@ import textwrap
 import ansible_runner
 
 
-class Exible:
+class Tendible:
     base_dir = "playbooks/"
     def __init__(self, inventory, playbook, extra_vars, extra_flags):
         self.__private_data_dir = '.'

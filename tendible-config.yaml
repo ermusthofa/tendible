@@ -1,4 +1,3 @@
-target_hash: a1795ad1edb338f9018df255c8ea0f263f19051a
 playbooks:
 - name: experiment/greetings.yml
   extra_vars:
