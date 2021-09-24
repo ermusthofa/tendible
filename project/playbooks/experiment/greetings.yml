@@ -1,0 +1,11 @@
+- name: basic setup
+  hosts: os_linux
+  gather_facts: no
+
+  roles:
+  - common
+
+  post_tasks:
+  - name: greeting
+    debug:
+      msg: "hello {{ custom_param | default('empty') }}"

@@ -1,0 +1,8 @@
+- name: basic setup
+  hosts: os_linux
+  gather_facts: no
+
+  tasks:
+  - name: goodbye
+    debug:
+      msg: "goodbye {{ custom_param | default('empty') }}"
