@@ -1,3 +1,6 @@
 __pycache__
 artifacts/
 env/
+build
+dist
+tendible.egg-info

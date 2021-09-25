@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/bin/env python
 
 import argparse
 import sys
@@ -57,22 +57,22 @@ def add_args_to_parser(parser, args):
 
 def run(config):
     for playbook in config.playbooks:
-        extra_flags = None
-        extra_vars  = None
+        extraflags = None
+        extravars  = None
         playbook    = dotdict(playbook)
-        if 'extra_vars' in playbook:
-            extra_vars = playbook.extra_vars
+        if 'extravars' in playbook:
+            extravars = playbook.extravars
 
-        if 'extra_flags' in playbook:
-            extra_flags = playbook.extra_flags
+        if 'extraflags' in playbook:
+            extraflags = playbook.extraflags
 
-        obj = Tendible(
+        tendible = Tendible(
             inventory   = ".",
             playbook    = playbook.name,
-            extra_vars  = extra_vars,
-            extra_flags = extra_flags
+            extravars  = extravars,
+            extraflags = extraflags
         )
-        obj.run()
+        tendible.apply()
 
 def main(sys_args=None):
 

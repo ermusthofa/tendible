@@ -1,10 +1,10 @@
 playbooks:
 - name: experiment/greetings.yml
-  extra_vars:
+  extravars:
     custom_param: johndoe
 - name: experiment/goodbye.yml
-  extra_vars:
+  extravars:
     custom_param: whiskey
     experiment: "true"
 - name: experiment/goodbye.yml
-  extra_flags: "-vvv"
+  extraflags: "-vvv"

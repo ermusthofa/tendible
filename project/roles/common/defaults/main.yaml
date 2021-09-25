@@ -1,2 +1,4 @@
 common_packages:
 - telnet
+- git
+- dnsutils
